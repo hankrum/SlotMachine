@@ -1,10 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SlotMachine.Data.Model
+﻿namespace SlotMachine.Data.Model
 {
-    class Card
+    public class Card
     {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
+        public string Symbol { get; set; }
+
+        public double Probability { get; set; }
+
+        public double Coefficient { get; set; }
     }
 }
