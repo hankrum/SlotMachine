@@ -5,3 +5,7 @@
 2. Technology - .net core 3.1, frontend - razor views.
 
 3. Data is kept in some singleton repositories.
+
+For questions - Stefan Dantchev
+0888-554810
+st_kolev@mail.bg
