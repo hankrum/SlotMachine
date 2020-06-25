@@ -2,15 +2,15 @@
 
 namespace SlotMachine.Data.Repository
 {
-    public class BallanceRepository
+    public class BallanceRepository : IBalanceRepository
     {
-        private Double ballance;
+        private Decimal ballance;
 
         public BallanceRepository()
         {
             this.ballance = 0;
         }
-        public Double Ballance
+        public Decimal Ballance
         {
             get
             {
@@ -18,18 +18,14 @@ namespace SlotMachine.Data.Repository
             }
         }
 
-        public double Credit(double amount)
+        public void Credit(decimal amount)
         {
             this.ballance += amount;
-
-            return amount;
         }
 
-        public double Debit(double amount)
+        public void Debit(decimal amount)
         {
             this.ballance -= amount;
-
-            return amount;
         }
     }
 }

@@ -1,11 +1,8 @@
 ﻿using SlotMachine.Data.Model;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SlotMachine.Data.Repository
 {
-    public class CardsRepository
+    public class CardsRepository : ICardsRepository
     {
         private readonly Card[] repository = new Card[]
         {
@@ -49,6 +46,11 @@ namespace SlotMachine.Data.Repository
             {
                 return this.repository;
             }
+        }
+
+        public Card GetCardById(int id)
+        {
+            return this.repository[id];
         }
     }
 }
