@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SlotMachine.Data.Repository;
 
 namespace SlotMachine
 {
@@ -24,6 +25,13 @@ namespace SlotMachine
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            this.RegisterData(services);
+        }
+
+        private void RegisterData(IServiceCollection services)
+        {
+            services.AddSingleton<IBalanceRepository, BallanceRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
