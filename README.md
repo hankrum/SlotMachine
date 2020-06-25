@@ -1,4 +1,4 @@
-"# SlotMachine" 
+# SlotMachine
 
 1. Instructions - start in visual studio and play in browser - address: https://localhost:44328/
 
