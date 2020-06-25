@@ -1,0 +1,11 @@
+﻿@model SlotMachine.Models.DepositViewModel
+@{
+    ViewData["Title"] = "Deposit";
+}
+    <form asp-controller="Game" asp-action="Deposit" method="post">
+        <div>Please enter your deposit amount:</div>
+        <input type="number" name="Amount" value="" asp-for="Amount" />
+        <button type="submit">Submit</button>
+        @Html.ValidationMessageFor(m => m.Amount, null, new { @class = "alert alert-warning" })
+
+    </form>

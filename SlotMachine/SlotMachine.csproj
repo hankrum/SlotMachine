@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SlotMachine.Data\SlotMachine.Data.csproj" />
+    <ProjectReference Include="..\SlotMachine.Services\SlotMachine.Services.csproj" />
   </ItemGroup>
 
 </Project>

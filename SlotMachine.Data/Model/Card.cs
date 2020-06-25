@@ -8,8 +8,8 @@
 
         public string Symbol { get; set; }
 
-        public double Probability { get; set; }
+        public decimal Probability { get; set; }
 
-        public double Coefficient { get; set; }
+        public decimal Coefficient { get; set; }
     }
 }

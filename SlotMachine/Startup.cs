@@ -1,14 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SlotMachine.Data.Repository;
+using SlotMachine.Services;
 
 namespace SlotMachine
 {
@@ -27,11 +23,19 @@ namespace SlotMachine
             services.AddControllersWithViews();
 
             this.RegisterData(services);
+            this.RegisterServices(services);
         }
 
         private void RegisterData(IServiceCollection services)
         {
             services.AddSingleton<IBalanceRepository, BallanceRepository>();
+            services.AddSingleton<ICardsRepository, CardsRepository>();
+        }
+
+        private void RegisterServices(IServiceCollection services)
+        {
+            services.AddScoped<IRandomProvider, RandomProvider>();
+            services.AddScoped<IGameProcessor, GameProcessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

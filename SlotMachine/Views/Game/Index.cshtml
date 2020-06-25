@@ -1,9 +1,0 @@
-﻿@using SlotMachine.Models
-@model SlotMachine.Models.DepositViewModel
-@{
-    ViewData["Title"] = "Index";
-}
-<form asp-controller="Game" asp-action="Deposit" method="post">
-    <input type="number" name="Amount" value="" asp-for="Amount"/>
-    <button type="submit">Submit</button>
-</form>

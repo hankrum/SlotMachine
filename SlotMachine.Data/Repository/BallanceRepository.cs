@@ -4,28 +4,43 @@ namespace SlotMachine.Data.Repository
 {
     public class BallanceRepository : IBalanceRepository
     {
-        private Decimal ballance;
+        private Decimal balance;
 
         public BallanceRepository()
         {
-            this.ballance = 0;
+            this.Reset();
         }
-        public Decimal Ballance
+        public Decimal Balance
         {
             get
             {
-                return this.ballance;
+                return this.balance;
             }
         }
 
         public void Credit(decimal amount)
         {
-            this.ballance += amount;
+            this.balance += amount;
         }
 
         public void Debit(decimal amount)
         {
-            this.ballance -= amount;
+            this.balance -= amount;
+        }
+
+        public bool IsValidStake(decimal stake)
+        {
+            return stake <= this.Balance;
+        }
+
+        public bool GameOver()
+        {
+            return this.balance <= 0;
+        }
+
+        public void Reset()
+        {
+            this.balance = 0;
         }
     }
 }

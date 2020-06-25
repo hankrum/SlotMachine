@@ -7,8 +7,10 @@ namespace SlotMachine.Data.Repository
 {
     public interface ICardsRepository
     {
-        Card[] Repository { get; }
+        Card[] GetAll { get; }
 
         Card GetCardById(int id);
+
+        int WildCardId();
     }
 }
